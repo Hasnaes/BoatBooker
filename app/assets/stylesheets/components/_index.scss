@@ -3,3 +3,66 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+/* Container for the boat list */
+
+
+.boat-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* Style for each boat item in the list */
+.boat-item {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+/* boat image */
+.boat-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Style for the "Learn more" link */
+.boat-details a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.boat-details a:hover {
+  background-color: #0056b3;
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}

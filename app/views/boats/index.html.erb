@@ -1,13 +1,29 @@
 <h1>Boats</h1>
-<ul>
-  <% @boats.each do |boat| %>
-    <li>
-      <strong>Name:</strong> <%= boat.name %><br>
-      <strong>Description:</strong> <%= boat.description %><br>
-      <strong>Capacity:</strong> <%= boat.capacity %><br>
-      <strong>Price:</strong> <%= boat.price %><br>
-      <strong>Location:</strong> <%= boat.location %><br>
-      <%= link_to 'Learn more', boat_path(boat) %>
-    </li>
-  <% end %>
-</ul>
+<header>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp);">
+  <div class="container">
+    <h1><strong>Boat Booker</strong></h1>
+    <p>Book quickly your boat here </p>
+  </div>
+</div>
+</header>
+
+<div class="container">
+  <div class="boat-list">
+    <% @boats.each do |boat| %>
+      <div class="boat-item">
+        <div class="boat-image">
+          <img src="<%= asset_path('Boat Images/Boat 1.jpeg') %>" alt="<%= boat.name %> Image">
+        </div>
+        <div class="boat-details">
+          <strong>Name:</strong> <%= boat.name %><br>
+          <strong>Description:</strong> <%= boat.description %><br>
+          <strong>Capacity:</strong> <%= boat.capacity %><br>
+          <strong>Price:</strong> <%= boat.price %><br>
+          <strong>Location:</strong> <%= boat.location %><br>
+          <%= link_to 'Learn more', boat_path(boat) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
