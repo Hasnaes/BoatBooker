@@ -1,0 +1,13 @@
+<h1>Boats</h1>
+<ul>
+  <% @boats.each do |boat| %>
+    <li>
+      <strong>Name:</strong> <%= boat.name %><br>
+      <strong>Description:</strong> <%= boat.description %><br>
+      <strong>Capacity:</strong> <%= boat.capacity %><br>
+      <strong>Price:</strong> <%= boat.price %><br>
+      <strong>Location:</strong> <%= boat.location %><br>
+      <%= link_to 'Learn more', boat_path(boat) %>
+    </li>
+  <% end %>
+</ul>
