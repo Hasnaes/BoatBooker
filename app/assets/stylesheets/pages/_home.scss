@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.BoatBooker {
+  font-size: 30px;
+  font-family: 'ADLaM Display', cursive;
+}
+
+body{
+  background-color: white;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+.container {
+  width: 500px;
+}
+
+.form-actions{
+  background-color: rgba(209, 204, 204, 0.703);
+  text-align: center;
+}
