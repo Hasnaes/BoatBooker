@@ -1,0 +1,11 @@
+
+        <h3>Create a new Boat listing</h3>
+        <%= simple_form_for @boat do |f| %>
+          <%= f.input :name, placeholder: 'Saling Paradise' %>
+          <%= f.input :description, placeholder: ' Experience the ultimate sailing adventure' %>
+          <%= f.input :capacity, placeholder: '3' %>
+          <%= f.input :price, placeholder: '$1000' %>
+          <%= f.input :location, placeholder: 'St Tropez' %>
+          <%= f.input :photos, as: :file %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>

@@ -1,0 +1,15 @@
+
+<div>
+  <strong><%= @boat.name %></strong><br>
+  <ul>
+      <strong>Description:</strong> <%= @boat.description %><br>
+      <strong>Capacity:</strong> <%= @boat.capacity %><br>
+      <strong>Price:</strong> <%= @boat.price %><br>
+      <strong>Location:</strong> <%= @boat.location %><br>
+      <strong>ADD LINK TO BOOK NOW - LINK TO CONFIRM PAGE</strong><br>
+      <strong>IF OWNER AUTHORISED </strong><br>
+      <%= link_to 'Create New Listing', new_boat_path%>
+      <%= link_to 'Edit Listing', edit_boat_path%>
+      <%= link_to "Delete",boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}%>
+  </ul>
+</div>
