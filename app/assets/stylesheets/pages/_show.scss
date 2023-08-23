@@ -12,6 +12,10 @@
   border-radius: 50% 20% / 10% 40%;
 }
 
+.list-group-item{
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .description{
   margin-top: 35px;
@@ -38,4 +42,9 @@
 
 #content{
   margin-top: 100px;
+}
+
+.map {
+  border-radius: 30px;
+  margin-bottom: 30px;
 }

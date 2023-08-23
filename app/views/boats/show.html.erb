@@ -6,15 +6,21 @@
         <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
         onclick="onClick(this)" class="w3-hover-opacity">
         <p class="description"><%= @boat.description %></p>
+              <p><%= link_to 'Book now', boats_path, class:"btn"%></p>
       </div>
     <div class="col-6" id="content">
       <ul class="list-group list-group-flush"></ul>
-        <li class="list-group-item">Check Location</li>
+        <%# <li class="list-group-item">Check Location</li> %>
           <p><%= '📍' + @boat.location %><p>
-          <img src="https://www.faire-face.fr/wp-content/uploads/2018/03/Google-Maps-itin%C3%A9raire-accessible.jpg" style="width: 300px"alt="img">
-        <li class="list-group-item">Capacity</li>
+            <div class="map" style="width: 50%; height: 300px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+
+        <li class="list-group-item" style="font-size: 17px">Capacity</li>
           <p><%= '👤 ' * @boat.capacity%></p>
-        <li class="list-group-item">Cost</li>
+        <li class="list-group-item" style="font-size: 17px">Cost</li>
           <p><%= @boat.price%>$</p>
       </ul>
       <%= link_to 'Create New Listing', new_boat_path, class:"btn"%>
