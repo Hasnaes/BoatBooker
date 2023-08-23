@@ -44,7 +44,7 @@ end
 private
 
 def boat_params
-  params.require(:boat).permit(:name, :description, :capacity, :price, :location, :photos)
+  params.require(:boat).permit(:name, :description, :capacity, :price, :location, :photo)
 end
 
 

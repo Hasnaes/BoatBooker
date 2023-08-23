@@ -7,47 +7,6 @@
 /* Container for the boat list */
 
 
-.boat-list {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-
-/* Style for each boat item in the list */
-.boat-item {
-  background-color: #f5f5f5;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-}
-
-/* boat image */
-.boat-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* Style for the "Learn more" link */
-.boat-details a {
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.boat-details a:hover {
-  background-color: #0056b3;
-}
-
-
 .banner {
   background-size: cover;
   background-position: center;
@@ -57,7 +16,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
 }
 .banner p {
@@ -65,4 +24,119 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.boat-details {
+  display: flex; /* Make .boat-details a flex container */
+  flex-direction: column; /* Align children horizontally */
+  justify-content: space-between; /* Spread the items across the available space */
+  align-items: left; /* Vertically center the items */
+}
+
+
+boat-name {
+  font-size:smaller;
+  flex: 1;
+}
+
+
+.boat-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+
+/* Style for the top row containing name and price */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style for the boat price */
+.boat-price {
+  flex-shrink: 0;
+}
+
+
+
+/* Boat list */
+.boat-list {
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* Boat row */
+.boat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+
+
+/* General styles */
+.container {
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+/* Boat list */
+.boat-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width as needed */
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* Boat item */
+.boat-item {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Boat details */
+.boat-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Boat name */
+.boat-name {
+  font-size: smaller;
+  flex: 1;
+}
+
+/* Boat image */
+.boat-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Learn more link */
+.boat-details a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #6d89a7;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.boat-details a:hover {
+  background-color: #0056b3;
 }
