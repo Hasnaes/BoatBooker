@@ -21,4 +21,5 @@ Boat.create(
   capacity: 4,
   price: 500,
   location: 'San Francisco, CA'
+
 )
