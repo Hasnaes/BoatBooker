@@ -10,11 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Amatic+SC&family=Assistant:wght@500&family=Cardo&family=Cormorant+Garamond:wght@300&family=Figtree:wght@500&family=Montserrat:wght@200;300&family=Open+Sans:wght@300&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
   </head>
 
   <body>
   <%= render "shared/navbar"%>
   <%= render "shared/flashes" %>
     <%= yield %>
+    <script>
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+      }
+    </script>
   </body>
 </html>

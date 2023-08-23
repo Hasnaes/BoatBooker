@@ -1,15 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1><%= @boat.name %></h1>
+      <p> <%= '⭐️ ' * 4 %> / 5</p>
+        <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
+        onclick="onClick(this)" class="w3-hover-opacity">
+        <p class="description"><%= @boat.description %></p>
+      </div>
+    <div class="col-6" id="content">
+      <ul class="list-group list-group-flush"></ul>
+        <li class="list-group-item">Check Location</li>
+          <p><%= '📍' + @boat.location %><p>
+          <img src="https://www.faire-face.fr/wp-content/uploads/2018/03/Google-Maps-itin%C3%A9raire-accessible.jpg" style="width: 300px"alt="img">
+        <li class="list-group-item">Capacity</li>
+          <p><%= '👤 ' * @boat.capacity%></p>
+        <li class="list-group-item">Cost</li>
+          <p><%= @boat.price%>$</p>
+      </ul>
+      <%= link_to 'Create New Listing', new_boat_path, class:"btn"%>
+      <%= link_to 'Edit Listing', edit_boat_path, class:"btn"%>
+      <%= link_to "Delete",boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}, class:"btn"%>
+  </div>
+  </div>
 
-<div>
-  <strong><%= @boat.name %></strong><br>
-  <ul>
-      <strong>Description:</strong> <%= @boat.description %><br>
-      <strong>Capacity:</strong> <%= @boat.capacity %><br>
-      <strong>Price:</strong> <%= @boat.price %><br>
-      <strong>Location:</strong> <%= @boat.location %><br>
-      <strong>ADD LINK TO BOOK NOW - LINK TO CONFIRM PAGE</strong><br>
-      <strong>IF OWNER AUTHORISED </strong><br>
-      <%= link_to 'Create New Listing', new_boat_path%>
-      <%= link_to 'Edit Listing', edit_boat_path%>
-      <%= link_to "Delete",boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}%>
-  </ul>
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img01" style="width:100%">
+  </div>
 </div>

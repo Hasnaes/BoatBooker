@@ -1,0 +1,41 @@
+.container {
+  align-items: center;
+  margin-left: 100px;
+}
+
+.container h1 {
+  font-family: 'Montserrat', bold;
+}
+
+.image {
+  width: 500px;
+  border-radius: 50% 20% / 10% 40%;
+}
+
+
+.description{
+  margin-top: 35px;
+  font-size: 15px;
+  font-family: 'Montserrat', bold;
+  text-align: justify;
+}
+
+#content > li{
+  background-color:#6d89a73c;;
+  width: 90%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #6D89A7;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#content{
+  margin-top: 100px;
+}
