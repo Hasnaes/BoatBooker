@@ -1,29 +1,41 @@
 <header>
+<%= render "shared/navbar"%>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp);">
   <div class="container">
     <h1><strong>Sail In Style</strong></h1>
     <p>Seamlessly with BoatBooker</p>
+
+    <!-- Overlay the search bar -->
+    <div class="overlay-search">
+      <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary ml-2" %> <!-- Add margin for spacing -->
+      <% end %>
+    </div>
   </div>
 </div>
 </header>
-
-    <div class="boat-list">
+<div class="boat-list">
       <% @boats.each do |boat| %>
-        <div class="boat-item">
-          <div class="boat-image">
-          <%= cl_image_tag boat.photo.key, width: 250, height: 250, crop: :fill%>
-          </div>
-          <div class="boat-details">
-            <div class="top-row">
-              <div class="boat-name"><strong><%= boat.name %></strong></div>
-              <div class="boat-price">$<%= boat.price %></div>
-            </div>
-            <div class="location"><strong>Location:</strong> <%= boat.location %></div>
-            <div class="learn-more">
-              <%= link_to 'Discover', boat_path(boat) %>
+        <%= link_to boat_path(boat) do %>
+          <div class="boat-item">
+            <div class="boat-image">
+              <%= cl_image_tag boat.photo.key, width: 250, height: 250, crop: :fill%>
+            <div class="boat-details">
+              <div class="top-row">
+                <div class="boat-name"><strong><%= boat.name %></strong></div>
+                <div class="boat-price">$<%= boat.price %> /<i> per day</i>
+                </div>
+              </div>
+              <div class="location"><strong>Location:</strong> <%= boat.location %></div>
             </div>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>

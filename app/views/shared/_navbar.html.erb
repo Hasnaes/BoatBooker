@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to boats_path(), class: "navbar-brand" do %>
       <%= image_tag "https://images.vexels.com/media/users/3/261297/isolated/preview/abc63d91a4a19d9ffb761ca198f70fb4-launch-boat-silhouette.png"%>
     <% end %>
     <div class="BoatBooker">BoatBooker</div>
@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Rent your boat", "#", class: "nav-link" %>
+          <%= link_to "Rent your boat", new_boat_path, class: "nav-link" %>
         </li>
           <li class="nav-item">
             <%= link_to "My Bookings", "#", class: "nav-link" %>

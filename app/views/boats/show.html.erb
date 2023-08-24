@@ -1,3 +1,4 @@
+<%= render "shared/navbar"%>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -26,12 +27,11 @@
               <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
             <%# </div> %> %> %> %>
 
-        <li class="list-group-item" style="font-size: 17px">Capacity</li>
+        <li class="list-group-item">Capacity</li>
           <p><%= '👤 ' * @boat.capacity%></p>
-        <li class="list-group-item" style="font-size: 17px">Cost</li>
-          <p><%= @boat.price%>$</p>
+        <li class="list-group-item">Cost</li>
+          <p><%= @boat.price%>$/per day</p>
       </ul>
-      <%= link_to 'Create New Listing', new_boat_path, class:"btn"%>
       <%= link_to 'Edit Listing', edit_boat_path, class:"btn"%>
       <%= link_to "Delete",boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}, class:"btn"%>
   </div>
