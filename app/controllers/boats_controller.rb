@@ -2,7 +2,15 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR location ILIKE :query"
+      @boats = @boats.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
+
+
+
+
 
   def show
     @boat = Boat.find(params[:id])
@@ -17,14 +25,14 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boat = Boat.create(boat_params)
+    @boat = Boat.new(boat_params)
+    @boat.user = current_user
     if @boat.save
       redirect_to boats_path(@boat)
     else
       render :new
     end
   end
-
 
   def edit
     @boat = Boat.find(params[:id])

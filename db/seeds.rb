@@ -22,8 +22,29 @@ User.create(
   password: '123456'
 )
 
-Boat.create(
-  name: 'Falcon - Yacht charter',
+require "open-uri"
+file = URI.open("https://res.cloudinary.com/ddazjsjwx/image/upload/v1692879171/boat5_ejekn2.jpg")
+boat1 = Boat.create(
+  name: 'Falcon',
+  description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
+  capacity: 10,
+  price: 1000,
+  location: 'Miami, FL',
+  user: User.last
+)
+if boat1.save
+  boat1.photo.attach(io: file, filename: "boat1.jpg", content_type: file.content_type)
+  puts "Boat created successfully!"
+else
+  puts "Failed to create boat: #{boat1.errors.full_messages.join(', ')}"
+end
+
+
+# BOAT 2 SEED
+
+file = URI.open("https://res.cloudinary.com/ddazjsjwx/image/upload/v1692878953/Boat_3_jlq447.png")
+boat2 = Boat.create(
+  name: 'Bluesky',
   description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
   capacity: 10,
   price: 1000,
@@ -31,11 +52,52 @@ Boat.create(
   user: User.last
 )
 
-Boat.create(
-  name: 'Princess - Yacht charter V55',
-  description: "This magnificent white PRINCESS V55 yacht is available for charter from the ports of La Grande Motte, Saint Tropez, Cannes, Monaco, Ibiza, Barcelona, Cadaqués, Sète, Cassis, Cap d'Agde and Corsica.",
-  capacity: 4,
+if boat2.save
+  boat2.photo.attach(io: file, filename: "boat2.jpg", content_type: file.content_type)
+  puts "Boat created successfully!"
+else
+  puts "Failed to create boat: #{boat2.errors.full_messages.join(', ')}"
+end
+
+# BOAT 3 SEED
+
+file = URI.open("https://res.cloudinary.com/ddazjsjwx/image/upload/v1692879171/boat6_x1hlht.jpg")
+boat3 = Boat.create(
+  name: 'Deepblue',
+  description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
+  capacity: 8,
   price: 500,
-  location: 'San Francisco, CA',
-  user: User.first
+  location: 'Ibiza',
+  user: User.last
 )
+
+if boat3.save
+  boat3.photo.attach(io: file, filename: "boat3.jpg", content_type: file.content_type)
+  puts "Boat created successfully!"
+else
+  puts "Failed to create boat: #{boat3.errors.full_messages.join(', ')}"
+end
+
+
+
+
+#Boat 4
+
+file = URI.open("https://res.cloudinary.com/ddazjsjwx/image/upload/v1692878953/Boat_1_d1vwp8.jpg")
+boat4 = Boat.create(
+  name: 'Royal Deep',
+  description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
+  capacity: 20,
+  price: 2000,
+  location: 'Ibiza',
+  user: User.last
+)
+
+if boat4.save
+  boat4.photo.attach(io: file, filename: "boat4.jpg", content_type: file.content_type)
+  puts "Boat created successfully!"
+else
+  puts "Failed to create boat: #{boat4.errors.full_messages.join(', ')}"
+end
+
+
