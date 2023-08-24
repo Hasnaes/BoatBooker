@@ -1,0 +1,87 @@
+.container{
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarLeft{
+  display: block;
+  background-image: url("https://www.yamahaboats.com/globalassets/media/my24/boats/mobile/hero-image-boats.png");
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.5;
+  width: 500px;
+  text-align: center;
+}
+
+.right {
+  display: block;
+  flex-grow: 1;
+  position: relative;
+}
+
+.placeavatar{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.Create{
+  font-family: 'ADLaM Display', cursive;
+  color:rgba(144, 183, 208, 0.866);
+  font-size: 30px;
+}
+
+.sidebarbellow {
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+  margin-left: 300px;
+  margin-top: 100px;
+}
+
+.form-control {
+  background-color: white;
+  width: 400px;
+  border-color: rgba(0, 0, 0, 0.343);
+}
+
+img {
+  width: 70px;
+  align-items: left;
+}
+
+li {
+  list-style: none;
+}
+
+.button-31 {
+  background-color: rgba(144, 184, 208, 0.917);;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: .75;
+}
