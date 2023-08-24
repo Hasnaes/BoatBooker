@@ -29,7 +29,7 @@ boat1 = Boat.create(
   description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
   capacity: 10,
   price: 1000,
-  location: 'Miami, FL',
+  location: 'Terminal D - Port of Miami, Miami',
   user: User.last
 )
 if boat1.save
@@ -67,8 +67,8 @@ boat3 = Boat.create(
   description: 'Welcome aboard the extraordinary Falcao 31m, a masterpiece of luxury and elegance nestled in the stunning harbor of Palma de Mallorca. Falcao 31m offers exceptional charter experiences, including 6-hour, 8-hour, and overnight charters, transforming your dreams of a lavish escape into a reality.',
   capacity: 8,
   price: 500,
-  location: 'Ibiza',
-  user: User.last
+  location: 'Marina Green, San Francisco',
+  user: User.first
 )
 
 if boat3.save
