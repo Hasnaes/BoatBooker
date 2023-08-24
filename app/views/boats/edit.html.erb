@@ -1,10 +1,37 @@
-        <h3>EDIT</h3>
-        <%= simple_form_for @boat do |f| %>
-          <%= f.input :name, placeholder: 'Saling Paradise' %>
-          <%= f.input :description, placeholder: ' Experience the ultimate sailing adventure' %>
-          <%= f.input :capacity, placeholder: '3' %>
-          <%= f.input :price, placeholder: '$1000' %>
-          <%= f.input :location, placeholder: 'St Tropez' %>
-          <%= f.input :photo, as: :file %>
-          <%= f.submit class: 'btn btn-flat' %>
-        <% end %>
+<div class="d-flex">
+  <div class="sidebaredit">
+    <%= link_to boats_path(), class: "navbar-brand" do %>
+      <%= image_tag "https://images.vexels.com/media/users/3/261297/isolated/preview/abc63d91a4a19d9ffb761ca198f70fb4-launch-boat-silhouette.png", class: "boat"%>
+    <% end %>
+  </div>
+
+  <div class="right">
+    <div class="placeavatar">
+        <li class="nav-item dropdown">
+          <a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png", alt: "dropdown menu", class:"avatar" %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "🛥️ Rent a boat", new_boat_path, class: "dropdown-item" %>
+            <%= link_to "✅ My bookings", "#", class: "dropdown-item" %>
+            <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" do %>
+              <i class='fa-solid fa-power-off' style='color: #546a92;'></i>
+            <% end %>
+          </div>
+        </li>
+    </div>
+
+      <div class="sidebarbellow">
+        <h3 class="Create">Edit your boat</h3>
+          <%= simple_form_for @boat do |f| %>
+            <%= f.input :name, placeholder: 'Saling Paradise' %>
+            <%= f.input :description, placeholder: ' Experience the ultimate sailing adventure' %>
+            <%= f.input :capacity, placeholder: '3' %>
+            <%= f.input :price, placeholder: '$1000' %>
+            <%= f.input :location, placeholder: 'St Tropez' %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: 'button-31' %>
+          <% end %>
+      </div>
+  </div>
+</div>

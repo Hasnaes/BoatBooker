@@ -2,20 +2,18 @@ class BookingsController < ApplicationController
   before_action :set_boat, except: :my_dashboard
 
   def create
-
     @booking = Booking.new
     @booking.boat = @boat
     @booking.user = current_user
-    # @boat = Boat.find(params[:boat_id])
 
     @booking.start_date = params[:booking][:start_date]
     @booking.end_date = params[:booking][:end_date]
     @booking.total_price = @boat.price * (@booking.end_date - @booking.start_date)
 
     if @booking.save
-      redirect_to boats_path, notice: "Booking successful!"
+      redirect_to boats_path, notice: " 👌 Booking successful!"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
