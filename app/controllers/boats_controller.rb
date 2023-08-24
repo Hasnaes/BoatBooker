@@ -8,10 +8,6 @@ class BoatsController < ApplicationController
     end
   end
 
-
-
-
-
   def show
     @boat = Boat.find(params[:id])
     @markers = [
