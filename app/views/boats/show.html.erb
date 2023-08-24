@@ -14,6 +14,34 @@
       <%# <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
       onclick="onClick(this)" class="w3-hover-opacity"> %>
       <p><%= link_to 'Book now', '#', class:"button-36"%></p>
+    
+  <div class="row">
+    <div class="col-6">
+      <h1><%= @boat.name %></h1>
+      <p> <%= '⭐️ ' * 4 %> / 5</p>
+        <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
+        onclick="onClick(this)" class="w3-hover-opacity">
+        <p class="description"><%= @boat.description %></p>
+          <%= form_for [@boat, @booking] do |f| %>
+            <%= f.date_field :start_date,
+              as: :string,
+                      input_html: { data: { controller: "datepicker" } } %>
+            <%= f.date_field :end_date %>
+            <%= f.submit "Book", class: "btn btn-primary" %>
+          <% end %>
+
+
+      </div>
+    <div class="col-6" id="content">
+      <ul class="list-group list-group-flush"></ul>
+        <%# <li class="list-group-item">Check Location</li> %>
+          <%# <p><%= '📍' + @boat.location %><p>
+            <%# <div class="map" style="width: 50%; height: 300px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            <%# </div> %> %> %> %>
+
 
     <ul class="list-group list-group-flush"></ul>
       <li class="description"><%= @boat.description %></li>
