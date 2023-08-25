@@ -5,7 +5,7 @@
 </div>
 <div class="centered-container">
 <p style="text-align: center; margin-top: 23px; margin-bottom: 1px;">
-  <%= link_to 'Add New', '#', class: "button-36" %>
+  <%= link_to 'Add New', boats_path, class: "button-36" %>
 </p>
   <% @bookings.each do |booking| %>
   <div class="booking-container">
@@ -21,6 +21,7 @@
         <%= cl_image_tag booking.boat.photo.key, width: 250, height: 250, crop: :fill %>
       </div>
     </div>
+
   </div>
 <% end %>
 
