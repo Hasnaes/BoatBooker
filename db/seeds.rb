@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database with boats and users"
+Booking.destroy_all
 Boat.destroy_all
 User.destroy_all
 
@@ -32,9 +33,10 @@ boat1 = Boat.create(
   location: 'Terminal D - Port of Miami, Miami',
   user: User.last
 )
-if boat1.save
+if boat1
   boat1.photo.attach(io: file, filename: "boat1.jpg", content_type: file.content_type)
   puts "Boat created successfully!"
+  boat1.save
 else
   puts "Failed to create boat: #{boat1.errors.full_messages.join(', ')}"
 end
@@ -52,9 +54,10 @@ boat2 = Boat.create(
   user: User.last
 )
 
-if boat2.save
+if boat2
   boat2.photo.attach(io: file, filename: "boat2.jpg", content_type: file.content_type)
   puts "Boat created successfully!"
+  boat2.save
 else
   puts "Failed to create boat: #{boat2.errors.full_messages.join(', ')}"
 end
@@ -71,9 +74,10 @@ boat3 = Boat.create(
   user: User.first
 )
 
-if boat3.save
+if boat3
   boat3.photo.attach(io: file, filename: "boat3.jpg", content_type: file.content_type)
   puts "Boat created successfully!"
+  boat3.save
 else
   puts "Failed to create boat: #{boat3.errors.full_messages.join(', ')}"
 end
@@ -93,11 +97,10 @@ boat4 = Boat.create(
   user: User.last
 )
 
-if boat4.save
+if boat4
   boat4.photo.attach(io: file, filename: "boat4.jpg", content_type: file.content_type)
   puts "Boat created successfully!"
+  boat4.save
 else
   puts "Failed to create boat: #{boat4.errors.full_messages.join(', ')}"
 end
-
-
