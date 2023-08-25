@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @boat.price * days
 
     if @booking.save
-      redirect_to boats_path, notice: " 👌 Booking successful!"
+      redirect_to boat_my_dashboard_path, notice: " 👌 Booking successful!"
     else
       render :new, status: :unprocessable_entity
     end
