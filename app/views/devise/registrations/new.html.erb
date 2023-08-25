@@ -1,28 +1,47 @@
-<h2>Sign up</h2>
-<div class="container">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+<div id="mycreate">
+  <div class="sidebarSignup">
+    <%= link_to boats_path(), class: "navbar-brand" do %>
+      <%= image_tag "https://images.vexels.com/media/users/3/261297/isolated/preview/abc63d91a4a19d9ffb761ca198f70fb4-launch-boat-silhouette.png", class: "boat"%>
+    <% end %>
+    <h1 style="color:white; font-family: 'Work Sans'; font-size: 35px; margin-top: 250px;">BOATBOOKER</h1>
+  </div>
 
-    <div class="form-inputs">
-      <%= f.input :username,
-                  required: true,
-                  input_html: { autocomplete: "username" }%>
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
+    <div class="signupform">
+    <h2>Sign up</h2>
+    <div class="container">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up"%>
+        <div class="form-inputs">
+          <%= f.input :username,
+                      required: true,
+                      input_html: { autocomplete: "username" }%>
+          <%= f.input :first_name,
+                      required: true,
+                      input_html: { autocomplete: "first_name" }%>
+          <%= f.input :last_name,
+                      required: true,
+                      input_html: { autocomplete: "last_name" }%>
+          <%= f.input :address,
+                      required: true,
+                      input_html: { autocomplete: "address" }%>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up"%>
+              </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 </div>
-<%= render "devise/shared/links" %>

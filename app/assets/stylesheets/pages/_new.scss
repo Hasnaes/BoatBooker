@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+#mycreate{
+  margin-top: 0;
+}
+
 .sidebarLeft{
   display: block;
   background-image: url("https://www.yamahaboats.com/globalassets/media/my24/boats/mobile/hero-image-boats.png");
@@ -36,7 +40,6 @@
   margin: 0 auto;
   align-items: center;
   margin-left: 300px;
-  margin-top: 100px;
 }
 
 .form-control {
@@ -90,4 +93,8 @@ li {
 .button-31:hover,
 .button-31:focus {
   opacity: .75;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(128, 128, 128, 0.408) !important;
 }
