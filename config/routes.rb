@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     get "my_dashboard", to: "bookings#my_dashboard"
   end
 
-  root to: "pages#boats"
+  root to: "boats#index"
   devise_for :users
 end
