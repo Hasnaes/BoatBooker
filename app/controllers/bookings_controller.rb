@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_boat, except: :my_dashboard
 
   def create
-
     @booking = Booking.new
     @booking.boat = @boat
     @booking.user = current_user
@@ -13,9 +12,9 @@ class BookingsController < ApplicationController
     @booking.total_price = @boat.price * days
 
     if @booking.save
-      redirect_to boats_path, notice: "Booking successful!"
+      redirect_to boats_path, notice: " 👌 Booking successful!"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

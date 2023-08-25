@@ -1,66 +1,56 @@
 <%= render "shared/navbar"%>
 <div class="container">
   <div class="card-white">
-    <%= link_to edit_boat_path, class:"btn" do%>
+    <div class="block">
+      <%= link_to edit_boat_path, class:"btn" do%>
       <i class="fa-regular fa-pen-to-square"></i>
-      <% end %>
-    <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}, class:"btn" do%>
+        <% end %>
+      <%= link_to boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove your #{@boat.name} listing ?"}, class:"btn" do%>
       <i class="fa-solid fa-trash"></i>
-      <% end %>
+        <% end %>
 
-    <h1 class="main"><%= @boat.name %></h1>
-    <p> <%= '⭐️ ' * 4 %> / 5</p>
-      <%= cl_image_tag @boat.photo.key %>
-      <%# <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
-      onclick="onClick(this)" class="w3-hover-opacity"> %>
-      <p><%= link_to 'Book now', '#', class:"button-36"%></p>
-    
-  <div class="row">
-    <div class="col-6">
-      <h1><%= @boat.name %></h1>
+      <h1 class="main"><%= @boat.name %></h1>
       <p> <%= '⭐️ ' * 4 %> / 5</p>
-        <img class="image" src="https://www.france-yachts.com/photos/pgiArticle/1968-1/prestige-yacht-m8.jpg" alt="img" style="cursor:pointer"
-        onclick="onClick(this)" class="w3-hover-opacity">
-        <p class="description"><%= @boat.description %></p>
-          <%= form_for [@boat, @booking] do |f| %>
-            <%= f.date_field :start_date,
-              as: :string,
-                      input_html: { data: { controller: "datepicker" } } %>
-            <%= f.date_field :end_date %>
-            <%= f.submit "Book", class: "btn btn-primary" %>
-          <% end %>
-
-
-      </div>
-    <div class="col-6" id="content">
-      <ul class="list-group list-group-flush"></ul>
-        <%# <li class="list-group-item">Check Location</li> %>
-          <%# <p><%= '📍' + @boat.location %><p>
-            <%# <div class="map" style="width: 50%; height: 300px;"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-            <%# </div> %> %> %> %>
-
-
-    <ul class="list-group list-group-flush"></ul>
-      <li class="description"><%= @boat.description %></li>
-      <div class='list-inline'>
-        <p><%= @boat.capacity%> boaters 👤 </p>
-        <p><%= @boat.price%> 💲 / per day</p>
+      <%= cl_image_tag @boat.photo.key %>
+              <p>▽</p>
+        <div class='infos'>
+          <p class="message">👤 <%= @boat.capacity%> boaters ● </p>
+          <p class="message">💲<%= @boat.price%> / per day</p>
         </div>
+    </div>
+    <div id="secondblock" class="block">
+      <ul class="list-group list-group-flush"></ul>
+        <li class="message"> <strong>Share a unique experience with <%= @boat.name %></strong></li>
+        <li class="description"><%= @boat.description %></li>
       </ul>
+        <%= form_for [@boat, @booking] do |f| %>
+
+        <div id="dates" class="block">
+          <strong>Arrival</strong>
+            <p><%= f.date_field :start_date,as: :string, required: true,
+            input_html: { data: { controller: "datepicker" } } %></p>
+          <strong> Back</strong>
+            <p><%= f.date_field :end_date, required: true %></p>
+          <%= f.submit "Book Now", class: "button-36" %>
+          <% end %>
+        </div>
+    </div>
   </div>
 
-    <div class="card-white">
-      <h4>Check location</h4>
-      <p><%= '📍' + @boat.location %><p>
-      <div class="row map"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</form>
+</div>
+    <div class="card-other">
+      <div id="mapplace" class="block">
+        <h4>Check location</h4>
+        <p><%= '📍' + @boat.location %><p>
+        <div class="map"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
+
 
   <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
     <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>

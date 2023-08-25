@@ -3,24 +3,42 @@
   display: block;
   justify-content: space-between;
   align-items: center;
+  width: 1200px;
 }
-
+.block{
+  display: block;
+}
 .card-white{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: white;
+  display: flex;
   padding: 40px;
   box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
   border-radius: 4px;
   margin: 10px 0px;
   text-align: center;
-  width: 600px;
   margin-left: 10px;
 }
 
+.card-other{
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  margin: 10px 0px;
+  padding: 40px;
+  margin-left: 10px;
+}
+
+#secondblock{
+  margin-top: 60px;
+}
+
 .card-white img{
-  width: 500px;
+  width: 400px;
   border-radius: 50% 20% / 10% 40%;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 // img {
@@ -37,6 +55,8 @@
   font-size: 15px;
   font-family: 'Montserrat', bold;
   text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 // .btn {
@@ -48,6 +68,7 @@
 .button-36 {
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   border-radius: 8px;
+  margin-top: 10px;
   border-style: none;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -72,26 +93,53 @@
 
 @media (min-width: 768px) {
   .button-36 {
-    padding: 20px;
+    padding: 15px;
   }
 }
 
-i {
-  width: 100px;
-}
-
-.main{
-background-color: rgba(149, 214, 246, 0.256);
-}
-
 .map {
-  width: 100%;
-  height: 250px;
-  flex-grow: 1;
-  margin-left: 8px;
+  height: 300px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 h4 {
   color: rgb(92, 92, 157);
   font-family: 'arial';
+}
+
+#booking_end_date{
+  background-color: rgba(225, 225, 225, 0.465);
+  border-radius: 10px;
+  padding: 15px;
+  border: 0;
+}
+
+#booking_start_date{
+  background-color: rgba(225, 225, 225, 0.465);
+  border-radius: 10px;
+  padding: 15px;
+  border: 0;
+}
+
+.d-flex{
+  margin: 0 auto;
+  justify-content: center;
+  margin-top:100px;
+}
+
+.message {
+  font-family: 'Raleway';
+  font-weight: 300;
+  font-size: 20px;
+  color: #110945;
+}
+
+#dates{
+  margin-top: 20px;
+}
+
+.infos{
+  display: flex;
+  justify-content: center;
 }

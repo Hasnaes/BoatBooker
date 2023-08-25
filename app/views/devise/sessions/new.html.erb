@@ -1,3 +1,11 @@
+<div id="mycreate">
+  <div class="sidebarlogin">
+    <%= link_to boats_path(), class: "navbar-brand" do %>
+      <%= image_tag "https://images.vexels.com/media/users/3/261297/isolated/preview/abc63d91a4a19d9ffb761ca198f70fb4-launch-boat-silhouette.png", class: "boat"%>
+    <% end %>
+    <h1 style="color:white; font-family: 'Work Sans'; font-size: 35px; margin-top: 250px;">BOATBOOKER</h1>
+  </div>
+      <div class="loginform">
 <h2>Log in</h2>
 
 <div class="form_container container">
@@ -20,5 +28,7 @@
       <%= f.button :submit, "Log in" %>
     </div>
   <% end %>
+  </div>
 </div>
-<%= render "devise/shared/links" %>
+<%# <%= render "devise/shared/links" %>
+</div>
