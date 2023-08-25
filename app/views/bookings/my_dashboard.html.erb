@@ -1,18 +1,28 @@
-<% @bookings.each do |booking| %>
-  <div class="row">
-    <div class="col-12">
-      <p>Booking Date:  <%= booking.start_date %> - <%= booking.end_date %></p>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <h1><%= booking.boat.name %></h1>
-            <p>Price: <%= booking.total_price %></p>
-            <p>Location: <%= booking.boat.location %></p>
-            <p>Boat Date: <%= booking.end_date - booking.start_date %></p>
-            <p class="description"><%= booking.boat.description %></p>
-          </div>
-        </div>
+
+<%= render "shared/navbar"%>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddazjsjwx/image/upload/v1692958329/gob-dLjRYprFRqs-unsplash_mk13bq.jpg)">
+  Bookings
+</div>
+<div class="centered-container">
+<p style="text-align: center; margin-top: 23px; margin-bottom: 1px;">
+  <%= link_to 'Add New', '#', class: "button-36" %>
+</p>
+  <% @bookings.each do |booking| %>
+  <div class="booking-container">
+    <div class="booking-column">
+      <div class="booking-details">
+        <h1><%= booking.boat.name %></h1>
+        <p class="booking-price"> Total Price $<%= booking.total_price %></p>
+        <p class="booking-location"><%= booking.boat.location %></p>
+        <p class="booking-duration">Number of Days: <%= (booking.end_date - booking.start_date).to_i %> </p>
+        <p>Dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+      </div>
+      <div class="boat-image-booking">
+        <%= cl_image_tag booking.boat.photo.key, width: 250, height: 250, crop: :fill %>
       </div>
     </div>
   </div>
 <% end %>
+
+
+</div>
