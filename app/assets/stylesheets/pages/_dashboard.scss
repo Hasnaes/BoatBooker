@@ -1,0 +1,76 @@
+
+
+
+.booking-container {
+  margin-top: 25px;
+  margin-bottom: 20px; /* Add some space between each booking */
+}
+
+.booking-row {
+  display: flex; /* Display the row items in a flex layout */
+  justify-content: center; /* Horizontally center the content */
+}
+
+.booking-column {
+  border: 1px solid #ddd; /* Add a border to the booking container */
+  padding: 20px; /* Add some padding around the content */
+  width: 1100px; /* Increase the width of each booking container */
+  display: flex; /* Use flex layout for horizontal alignment */
+  justify-content: space-between; /* Distribute items along the main axis */
+  margin: 0 auto; /* Center the container horizontally */
+
+
+  overflow: hidden;
+
+  background: white;
+  box-shadow: 0 0 11px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+
+
+
+
+}
+
+.booking-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.booking-location {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.booking-duration {
+  margin-top: 10px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; /* Add some space between each booking */
+}
+
+
+.centered-container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this to control the vertical centering */
+}
+
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
